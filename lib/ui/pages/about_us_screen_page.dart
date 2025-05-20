@@ -79,11 +79,6 @@ class _AboutUsScreenPageState extends State<AboutUsScreenPage> {
           padding:
               EdgeInsets.symmetric(vertical: getProportionateScreenHeight(10)),
           children: [
-            ProfileInfoWidget(
-              image: 'assets/firda.jpg',
-              name: 'Firda Amalia.',
-              info: 'Polindra | RPL3C | 2205086',
-            ),
             GestureDetector(
               onDoubleTap: () {
                 _storeOnboardInfo();

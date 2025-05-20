@@ -27,6 +27,7 @@ class ArticleHomeTile extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
+              // ignore: deprecated_member_use
               color: const Color(0xff000000).withOpacity(0.25),
               blurRadius: 4,
               offset: const Offset(0, 4),

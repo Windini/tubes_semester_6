@@ -19,49 +19,35 @@ class MainPage extends StatelessWidget {
     final pageProvider = Provider.of<PageProvider>(context);
 
     Widget customNavigationBar() {
-      return SizedBox(
-        height: getProportionateScreenHeight(70),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(10),
-            topRight: Radius.circular(10),
-          ),
-          child: BottomAppBar(
-            child: BottomNavigationBar(
-              onTap: (value) => pageProvider.currentIndex = value,
-              type: BottomNavigationBarType.fixed,
-              currentIndex: pageProvider.currentIndex,
-              backgroundColor: blueColor,
-              selectedLabelStyle: opensansTextStyle.copyWith(
-                color: whiteColor,
-                fontSize: 12,
-                fontWeight: weightBold,
-              ),
-              selectedItemColor: whiteColor,
-              unselectedItemColor: whiteColor,
-              items: [
-                BottomNavigationBarItem(
-                  label: 'Home',
-                  icon: Image.asset(
-                    'assets/icon_home.png',
-                    color: pageProvider.currentIndex == 0
-                        ? yellowColor
-                        : whiteColor,
-                    width: getProportionateScreenWidth(30),
-                  ),
-                ),
-                BottomNavigationBarItem(
-                  label: 'Article',
-                  icon: Image.asset(
-                    'assets/icon_article.png',
-                    width: getProportionateScreenWidth(26),
-                    color: pageProvider.currentIndex == 1
-                        ? yellowColor
-                        : whiteColor,
-                  ),
-                ),
-              ],
+      return ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        ),
+        child: BottomAppBar(
+          child: BottomNavigationBar(
+            onTap: (value) => pageProvider.currentIndex = value,
+            type: BottomNavigationBarType.fixed,
+            currentIndex: pageProvider.currentIndex,
+            backgroundColor: blueColor,
+            selectedLabelStyle: opensansTextStyle.copyWith(
+              color: whiteColor,
+              fontSize: 12,
+              fontWeight: weightBold,
             ),
+            selectedItemColor: whiteColor,
+            unselectedItemColor: whiteColor,
+            iconSize: 24,
+            items: const [
+              BottomNavigationBarItem(
+                label: 'Home',
+                icon: Icon(Icons.home),
+              ),
+              BottomNavigationBarItem(
+                label: 'Article',
+                icon: Icon(Icons.article),
+              ),
+            ],
           ),
         ),
       );
@@ -123,6 +109,7 @@ class MainPage extends StatelessWidget {
       value: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
       ),
+      // ignore: deprecated_member_use
       child: WillPopScope(
         onWillPop: () async => handleWillPop(context),
         child: Scaffold(

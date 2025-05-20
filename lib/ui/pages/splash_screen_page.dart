@@ -58,11 +58,11 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/logo_hand.png',
+                    'assets/logo_aiskin.png',
                     width: getProportionateScreenWidth(170),
                   ),
                   Text(
-                    'Skined',
+                    'Aiskin',
                     style: latoTextStyle.copyWith(
                       fontSize: 90,
                       fontWeight: weightBold,
@@ -90,7 +90,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               child: Container(
                 margin: const EdgeInsets.only(bottom: 50),
                 child: Text(
-                  'Final Project Orbit',
+                  'Copyright © 2025 Kelompok 4',
+                  textAlign: TextAlign.center,
                   style: latoTextStyle.copyWith(
                     fontSize: 16,
                     color: whiteColor,
